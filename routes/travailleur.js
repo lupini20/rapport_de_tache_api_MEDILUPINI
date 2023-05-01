@@ -13,6 +13,9 @@ router.post("/", travailleur_controller.create);
 // (Étape 2) Ajout de la route qui permet d'afficher tous les travailleurs
 router.get("/", travailleur_controller.getAll);
 
+// Route pour obtenir les travailleurs d'un département spécifique
+router.get("/:department", travailleur_controller.getByDepartment);
+
 // (Étape 2) Ajout de la route qui permet d'afficher un seul travailleur grâce à son identifant
 router.get("/:id", travailleur_controller.getById);
 

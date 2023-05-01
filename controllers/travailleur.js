@@ -136,6 +136,28 @@ exports.getAll = (req, res, next) => {
     });
 };
 
+// Read
+exports.getByDepartment = [param("department").trim().escape(), checkValidity, (req, res, next) => {
+    Travailleur.find({ departement: req.params.department }, function (err, result) {
+        if (err) {
+          return res.status(500).json(err);
+        }
+        return res.status(200).json(result);
+    });
+}];
+
+exports.getAll = (req, res, next) => {
+    const departement = req.body.departement;
+    const query = departement ? { departement: departement } : {};
+    Travailleur.find(query, function (err, result) {
+      if (err) {
+        return res.status(500).json(err);
+      }
+      return res.status(200).json(result);
+    });
+};
+
+
 exports.getById = [paramIdValidationRule(), checkValidity, (req, res, next) => {
     travailleur.findById(req.params.id).exec(function (err, result) {
         if (err) {
