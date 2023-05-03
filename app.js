@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var travailleurRouter = require('./routes/travailleur');
+var departementRouter = require('./routes/departement');
 var mongoose = require('mongoose');
 var cors = require('cors');
 
@@ -26,6 +27,7 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/travailleurs', travailleurRouter);
+app.use('/departements',departementRouter);
 
 
 
