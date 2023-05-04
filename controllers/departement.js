@@ -14,14 +14,18 @@ exports.create = (req, res) => {
   });
 };
 
-exports.getAll = (req, res) => {
-  departements.find({}, (err, departements) => {
+exports.getAlls = (req, res, next) => {
+  Departement.find
+  (function (err, result) {
     if (err) {
       return res.status(500).json(err);
     }
-    return res.status(200).json(departements);
+    return res.status(200).json(result);
   });
 };
+
+
+
 
 exports.getOne = (req, res) => {
   Departement.findById(req.params.id, (err, departement) => {
