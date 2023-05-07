@@ -8,7 +8,7 @@ const { DateTime } = require("luxon");
 // https://mongoosejs.com/docs/schematypes.html#schematype-options
 const DepartementSchema = new mongoose.Schema({
     _id: { type: Number, required: true },
-    name: { type: String, required: true },
+    nom: { type: String, required: true },
   });
 
 // (Étape 3) Création d'une nouvelle propriété virtuelle "id" qui aura la valeur de la propriété "_id"
