@@ -28,8 +28,10 @@ const travailleurSchema = new mongoose.Schema({
   },
   dateOfBirth: {
     type: Date,
-    required: true,
-    transform: (x) => DateTime.fromJSDate(x).toFormat("dd/MM/yyyy"),
+  required: true,
+  set: function (val) {
+    return new Date(val).toISOString();
+  }
   },
   phoneNumber: {
     type: String,
