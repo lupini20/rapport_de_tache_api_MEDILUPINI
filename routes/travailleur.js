@@ -8,7 +8,7 @@ var travailleur_controller = require("../controllers/travailleur");
 // (Étape 2) Ajout de la route qui permet d'ajouter un travailleur
 router.post("/", travailleur_controller.create);
 
-// (Étape 2) Ajout de la route qui permet d'afficher tous les combattants
+// (Étape 2) Ajout de la route qui permet d'afficher tous les travailleurs
 router.get("/", travailleur_controller.getAll);
 
 // (Étape 2) Ajout de la route qui permet d'afficher un seul travailleur grâce à son identifant
